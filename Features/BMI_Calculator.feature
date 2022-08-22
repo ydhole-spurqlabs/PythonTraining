@@ -2,7 +2,6 @@
 Feature: Create test cases using Selenium with Python to automate below BMI calculator tests
 
   @web
-
   Scenario Outline: Calculating BMI value by passing multiple inputs
 #    Given : BMI Calculator Homepage
     When  : You enter the "<Age>"
@@ -22,12 +21,3 @@ Feature: Create test cases using Selenium with Python to automate below BMI calc
       | 45  | Female  |  150    |  52     | BMI = 23.1 kg/m2|
 
 
-#    @cal
-#
-#    Scenario: Validate functionality of calculator using data table
-##    Given : User is on calculator page
-#    When  : User enters following inputs
-#      | num1   | Operator | num2 |
-#      | 352454 | +        | 2    |
-#    And   : User click on calculate button
-#    Then  : User verifies the actual result with expected result
