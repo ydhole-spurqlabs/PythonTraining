@@ -3,12 +3,10 @@ from behave import *
 use_step_matcher("re")
 
 
-# @given(": BMI Calculator Homepage")
-# def step_impl(context):
-#     context.driver = webdriver.Chrome("G:/Python/Training/Resources/chromedriver.exe")
-#     context.driver.maximize_window()
-#     context.driver.get("https://www.calculator.net/bmi-calculator.html?ctype=metric")
-#     context.driver.implicitly_wait(3)
+@given(": BMI Calculator Homepage")
+def step_impl(context):
+    context.driver.get(open['BMIWEBURL'])
+    context.driver.implicitly_wait(3)
 
 
 @when(': You enter the "(?P<Age>.+)"')

@@ -11,25 +11,20 @@ class CalculatorPage:
         self.calculatebtn_xpath = "//span[text()= '=']"
         self.result_id = "sciOutPut"
 
-    def enter_number(self):
-        for row in self.table:
-            num1 = row[0][0]
-            n1 = str(num1)
-            operator = row[1][0]
-            num2 = row[2][0]
-            n2 = str(num2)
-            for i in n1:
-                n = n1[i]
-                self.driver.find_element(By.XPATH, "//span[text()= '" + n + "']").click()
-                time.sleep(2)
-
-            self.driver.find_element(By.XPATH, "//span[text()= '" + operator + "']").click()
+    def enter_number(self, table):
+        num1 = table[0][0]
+        print(num1)
+        operator = table[0][1]
+        num2 = table[0][2]
+        for i in range(0, len(num1)):
+            time.sleep(5)
+            self.driver.find_element(By.XPATH, "//span[text()= '" + num1[i] + "']").click()
             time.sleep(2)
-
-            for j in n2:
-                m = n2[j]
-                self.driver.find_element(By.XPATH, "//span[text()= '" + m + "']").click()
-                time.sleep(2)
+        self.driver.find_element(By.XPATH, "//span[text()= '" + operator + "']").click()
+        time.sleep(2)
+        for j in range(0, len(num2)):
+            self.driver.find_element(By.XPATH, "//span[text()= '" + num2[j] + "']").click()
+            time.sleep(2)
 
     def calculatebtn_click(self):
         self.driver.find_element(By.XPATH, self.calculatebtn_xpath).click()

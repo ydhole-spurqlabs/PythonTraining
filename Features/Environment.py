@@ -1,4 +1,6 @@
 import json
+import time
+
 from allure_commons._allure import attach
 from allure_commons.types import AttachmentType
 from selenium import webdriver
@@ -14,23 +16,25 @@ def before_scenario(context, scenario):
     tag = str(scenario.tags)
     print(tag)
     context.driver = webdriver.Chrome("G:/Python/Training/Resources/chromedriver.exe")
+    time.sleep(5)
     basepage = BasePage(context.driver)
     context.bmipage = BmiPage(basepage)
     context.calpage = CalculatorPage(basepage)
     context.stepid = 1
-    try:
-        if "web" in tag:
-            context.driver.get(data['BMIWEBURL'])
+    # try:
+    if "web" in tag:
+            context.driver.get(data['WEBURL'])
             context.driver.maximize_window()
             context.driver.implicitly_wait(3)
-        else:
-            pass
-    except:
-        if "cal" in tag:
-            context.driver.get(data['CALCULATORURL'])
-            context.driver.maximize_window()
-        else:
-            pass
+    else:
+        pass
+    # except:
+        # if "cal" in tag:
+        #     context.driver.get(data['WEBURL'])
+        #     context.driver.maximize_window()
+        #     context.driver.implicitly_wait(10)
+        # else:
+        #     pass
 
 
 def after_step(context, step):

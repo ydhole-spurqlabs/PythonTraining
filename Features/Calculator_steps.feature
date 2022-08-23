@@ -1,6 +1,6 @@
 Feature: Calculator Functionality
 
-  @cal
+  @web
   Scenario: Validate functionality of calculator using data table
 #    Given : User is on calculator page
     When  : User enters following inputs

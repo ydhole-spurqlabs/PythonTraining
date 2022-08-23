@@ -3,7 +3,7 @@ Feature: Create test cases using Selenium with Python to automate below BMI calc
 
   @web
   Scenario Outline: Calculating BMI value by passing multiple inputs
-#    Given : BMI Calculator Homepage
+    Given : BMI Calculator Homepage
     When  : You enter the "<Age>"
     And   : Click on "<Gender>"
     And   : Enter "<Height>"
